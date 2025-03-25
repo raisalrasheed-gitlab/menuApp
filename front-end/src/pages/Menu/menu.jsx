@@ -1,16 +1,16 @@
 import Navbar from '../../components/Navbar/navbar';
 import { IoMdAddCircleOutline } from 'react-icons/io';
 const Menu = () => {
-  var a = [1];
+  var a = ['luch', 'breakfast', 'suppur'];
   return (
     <>
       <Navbar />
       <div className="h-[311px] bg-[url(./assets/Rectangle.png)]"></div>
       <div className="h-[79px] bg-[url(./assets/Rectangle1.png)] flex justify-center text-center items-center gap-8 oswald font-semibold text-lg">
-        {a.map(name => {
+        {a.map(items => {
           return (
             <div className="text-white bg-black w-[114px] h-[50px] flex justify-center items-center border-2 border-blue-500 cursor-pointer">
-              Food
+              {items}
             </div>
           );
         })}
