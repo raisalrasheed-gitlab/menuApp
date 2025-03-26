@@ -5,7 +5,7 @@ const routes = require('./Routes-main');
 const cors = require('cors');
 const app = express();
 //config env
-env.config({ path: './src/.env' });
+env.config({ path: 'src/.env' });
 app.use(cors());
 app.use(express.json());
 

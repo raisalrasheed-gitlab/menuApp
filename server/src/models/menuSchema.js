@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const MenuItemSchema = new mongoose.Schema({
   name: String,
   description: String,
-  price: Number,
+  price: String,
 });
 
 const MenuSchema = new mongoose.Schema({

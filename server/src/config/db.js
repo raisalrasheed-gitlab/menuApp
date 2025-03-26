@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-Mongo_url = 'mongodb://0.0.0.0:27017/menudash';
+const env = require('dotenv');
+env.config({ path: 'src/.env' });
+Mongo_url = process.env.MONGO_DB;
 mongoose
   .connect(Mongo_url)
   .then(() => {
