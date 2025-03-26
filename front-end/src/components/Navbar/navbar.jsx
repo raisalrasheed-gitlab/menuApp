@@ -44,13 +44,16 @@ const Navbar = () => {
         </ul>
 
         {/* Mobile Menu Button */}
-        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+        <button
+          className="md:hidden absolute right-10"
+          onClick={() => setIsOpen(!isOpen)}
+        >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
       {/* Mobile Dropdown Menu */}
-      <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} mt-4`}>
+      <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} mt-20 mr-20`}>
         <ul className="flex flex-col space-y-3 text-center bg-blue-700 p-4 rounded-lg">
           <li>
             <a href="#" className="hover:text-gray-300">

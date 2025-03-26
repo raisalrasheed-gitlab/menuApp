@@ -3,6 +3,10 @@ import Footer from '../../components/Footer/footer';
 import { IoMdAddCircleOutline } from 'react-icons/io';
 import axios from '../../utils/axios';
 import { useState, useEffect } from 'react';
+import glassL from '../../assets/GlassLeft.png';
+import glassR from '../../assets/GlassRight.png';
+import framel from '../../assets/FrameRight.png';
+import framer from '../../assets/FrameLeft.png';
 
 const Menu = () => {
   const [menu, setMenu] = useState([]);
@@ -42,7 +46,7 @@ const Menu = () => {
         <div className="text-white text-[50px] md:text-[75px] font-semibold [text-shadow:3px_0px_0px_hsla(345,100%,50%,1)]">
           MENU
         </div>
-        <h2 className="text-white md:w-[400px] kelly-slab md:ext-lg text-center ">
+        <h2 className="text-white md:w-[400px] kelly-slab md:ext-lg text-center p-2">
           Please take a look at our menu featuring food, drinks, and brunch. If
           you'd like to place an order, use the "Order Online" button located
           below the menu.
@@ -108,8 +112,16 @@ const Menu = () => {
           ''
         )}
       </div>
-      <div className="h-[535px] md:h-[672px] bg-[url(./assets/Rectangle2.png)] flex justify-center items-center oswald">
+      <div className="h-[535px] md:h-[672px] bg-[url(./assets/Rectangle2.png)] flex justify-center items-center oswald relative">
+        <img src={framel} className="md:block absolute -left-2 hidden"></img>
+        <img src={framer} className="md:block absolute -right-2 hidden"></img>
         <div className="md:min-h-[416px] w-[1140px] border-2 bg-black text-white flex flex-col gap-8 items-center relative p-2 pb-4">
+          <div className="w-20 xl:w-40 absolute 2xl:-left-12 2xl:-top-30 left-0 top-0">
+            <img src={glassL}></img>
+          </div>
+          <div className="w-20 right-0 bottom-0 xl:w-40 absolute 2xl:-right-10 2xl:-bottom-5">
+            <img src={glassR}></img>
+          </div>
           {details ? (
             <div
               className="absolute md:right-10 md:top-10 right-5 top-5"
@@ -188,6 +200,15 @@ const Menu = () => {
         </div>
       </div>
       <Footer />
+      <div className="md:h-[45px] bg-[#161616] font-semibold flex flex-col md:flex-row items-center justify-around text-gray-400 p-2">
+        <h2 className="text-center">
+          © 2024 Deepnetsoft Solutions. All rights reserved.
+        </h2>
+        <div className="flex gap-10">
+          <h2>Terms & Conditions</h2>
+          <h2>Privacy Policy</h2>
+        </div>
+      </div>
     </>
   );
 };
