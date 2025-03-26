@@ -1,7 +1,7 @@
 import Navbar from '../../components/Navbar/navbar';
 import Footer from '../../components/Footer/footer';
 import { IoMdAddCircleOutline } from 'react-icons/io';
-import axios from 'axios';
+import axios from '../../utils/axios';
 import { useState, useEffect } from 'react';
 
 const Menu = () => {
@@ -16,24 +16,21 @@ const Menu = () => {
     getMenu();
   }, []);
   const getMenu = async () => {
-    const dbResponse = await axios.get('http://localhost:5000/menu');
+    const dbResponse = await axios.get('/menu');
     setMenu(dbResponse.data);
   };
   const detail = async id => {
-    const dbResponse = await axios.get(`http://localhost:5000/menu/${id}`);
+    const dbResponse = await axios.get(`/menu/${id}`);
     setDetails(dbResponse.data);
     setSId(id);
   };
   const onAdd = async () => {
-    const dbResponse = await axios.post(
-      `http://localhost:5000/menu/${sid}/item`,
-      addI
-    );
+    const dbResponse = await axios.post(`/menu/${sid}/item`, addI);
     setHide(!hide);
     detail(sid);
   };
   const onAddM = async () => {
-    const dbResponse = await axios.post('http://localhost:5000/menu/', addM);
+    const dbResponse = await axios.post('/menu/', addM);
     console.log(dbResponse);
     getMenu();
     setSeek(!seek);
