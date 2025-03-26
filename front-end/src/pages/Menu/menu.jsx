@@ -67,14 +67,14 @@ const Menu = () => {
         })}
         <div className=" flex justify-center items-center rounded-full gap-2">
           <IoMdAddCircleOutline
-            className="text-blue-600 text-3xl md:text-5xl"
+            className="text-blue-600 text-3xl md:text-5xl cursor-pointer"
             onClick={() => {
               setSeek(!seek);
             }}
           />
         </div>
         {seek ? (
-          <div className="bg-white w-[250px] z-1 md:w-[500px] flex flex-col absolute gap-4 text-left p-2">
+          <div className="bg-white w-[250px] z-1 md:w-[500px] flex flex-col absolute gap-4 text-left p-2 ">
             <h2 className="text-center font-semibold text-2xl underline">
               Add items
             </h2>
@@ -96,14 +96,17 @@ const Menu = () => {
             ></input>
             <div className="flex gap-2">
               <button
-                className="bg-red-700 p-2"
+                className="bg-red-700 p-2 cursor-pointer"
                 onClick={() => {
                   setSeek(!seek);
                 }}
               >
                 Cancel
               </button>
-              <button className="bg-green-700 p-2" onClick={onAddM}>
+              <button
+                className="bg-green-700 p-2 cursor-pointer"
+                onClick={onAddM}
+              >
                 Submit
               </button>
             </div>
@@ -113,8 +116,8 @@ const Menu = () => {
         )}
       </div>
       <div className="h-[535px] md:h-[672px] bg-[url(./assets/Rectangle2.png)] flex justify-center items-center oswald relative">
-        <img src={framel} className="md:block absolute -left-2 hidden"></img>
-        <img src={framer} className="md:block absolute -right-2 hidden"></img>
+        <img src={framel} className="md:block absolute left-2 hidden"></img>
+        <img src={framer} className="md:block absolute right-2 hidden"></img>
         <div className="md:min-h-[416px] w-[1140px] border-2 bg-black text-white flex flex-col gap-8 items-center relative p-2 pb-4">
           <div className="w-20 xl:w-40 absolute 2xl:-left-12 2xl:-top-30 left-0 top-0">
             <img src={glassL}></img>
@@ -129,7 +132,7 @@ const Menu = () => {
                 setHide(!hide);
               }}
             >
-              <IoMdAddCircleOutline className="text-3xl md:text-5xl" />
+              <IoMdAddCircleOutline className="text-3xl md:text-5xl cursor-pointer" />
             </div>
           ) : (
             ''
@@ -165,14 +168,17 @@ const Menu = () => {
               ></input>
               <div className="flex gap-2">
                 <button
-                  className="bg-red-700 p-2"
+                  className="bg-red-700 p-2 cursor-pointer"
                   onClick={() => {
                     setHide(!hide);
                   }}
                 >
                   Cancel
                 </button>
-                <button className="bg-green-700 p-2" onClick={onAdd}>
+                <button
+                  className="bg-green-700 p-2 cursor-pointer"
+                  onClick={onAdd}
+                >
                   Submit
                 </button>
               </div>
